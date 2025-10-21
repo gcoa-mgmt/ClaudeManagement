@@ -1,0 +1,227 @@
+{
+  "Rows": {
+    "RowColumnAttachedInfos": {
+      "3": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 40.0
+        }
+      },
+      "4": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 48.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      }
+    },
+    "Count": 17,
+    "DefaultSize": 32.0
+  },
+  "Cols": {
+    "RowColumnAttachedInfos": {
+      "11": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 32.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      }
+    },
+    "Count": 13,
+    "DefaultSize": 32.0
+  },
+  "Values": {
+    "1,1": "添加记录",
+    "4,8": "更改",
+    "4,10": "删除"
+  },
+  "AttachInfos": {
+    "1,1": {
+      "CellType": {
+        "$type": "Forguncy.ButtonCellType, ServerDesignerCommon",
+        "CommandList": [
+          {
+            "$type": "Forguncy.Model.NavigateCommand, ServerDesignerCommon",
+            "PageName": "api_keys_详情页面",
+            "PassValues": [
+              {
+                "Source": "添加",
+                "TargetCell": {
+                  "SerializeProperty": "=api_keys_详情页面!B11"
+                }
+              }
+            ],
+            "LoadBindingDataOption": 2,
+            "BreakpointIdentity": "6baaea82-448a-4256-b243-ea56ec4b12cf"
+          }
+        ],
+        "Text": "添加记录",
+        "TemplateKey": "_RS_Main1"
+      }
+    },
+    "3,1": {
+      "ListViewInfo": {
+        "Name": "表格1",
+        "TableName": "api_keys",
+        "RowIndex": 3,
+        "ColumnIndex": 1,
+        "RowCount": 12,
+        "ColumnCount": 11,
+        "TopCondition": null,
+        "ListViewStyleName": "_RS_NewFashionListStyle2",
+        "ShowColumnHeaderInDesigner": true,
+        "IsRowHeaderVisible": true,
+        "ShowEditStatusIcon": true,
+        "UseSimpleBar": true,
+        "ColumnOperation": 2
+      }
+    },
+    "4,2": {
+      "NameUsedInJavaScript": "用户",
+      "BindingInfo": {
+        "TableName": "api_keys",
+        "ColumnName": "用户",
+        "GUID": "2ca7f85e-cd89-4a7f-90a5-2e9274be73c0"
+      }
+    },
+    "4,5": {
+      "NameUsedInJavaScript": "key",
+      "BindingInfo": {
+        "TableName": "api_keys",
+        "ColumnName": "key",
+        "GUID": "6ca06fa8-7aeb-41ec-a8e8-855f39b9e5ae"
+      }
+    },
+    "4,8": {
+      "NameUsedInJavaScript": "更改",
+      "CellType": {
+        "$type": "Forguncy.HyperlinkCellType, ServerDesignerCommon",
+        "CommandList": [
+          {
+            "$type": "Forguncy.Model.NavigateCommand, ServerDesignerCommon",
+            "PageName": "api_keys_详情页面",
+            "PassValues": [
+              {
+                "Source": "更改",
+                "TargetCell": {
+                  "SerializeProperty": "=api_keys_详情页面!B11"
+                }
+              }
+            ],
+            "LoadBindingDataOption": 1,
+            "BreakpointIdentity": "3a20043a-1fc4-4f00-b3bc-63f3f6da6760"
+          }
+        ],
+        "Text": "更改",
+        "TemplateKey": "_RS_Main"
+      }
+    },
+    "4,10": {
+      "NameUsedInJavaScript": "删除",
+      "CellType": {
+        "$type": "Forguncy.HyperlinkCellType, ServerDesignerCommon",
+        "CommandList": [
+          {
+            "$type": "Forguncy.Model.DeleteRecordCommand, ServerDesignerCommon",
+            "ConfirmText": "您确定要删除吗？",
+            "BreakpointIdentity": "20fd5bd3-5176-4a06-84af-f7bc0c44b6ea"
+          }
+        ],
+        "Text": "删除",
+        "TemplateKey": "_RS_Main"
+      }
+    },
+    "15,1": {
+      "CellType": {
+        "$type": "Forguncy.PageNavigateCellType, ServerDesignerCommon",
+        "PageingListviewName": "表格1",
+        "FirstImage": {
+          "Name": "Arrow/277_move_first_3.svg",
+          "BuiltIn": true,
+          "Color": "Text 1 50"
+        },
+        "PreviousImage": {
+          "Name": "Arrow/291_left_arrow_2.svg",
+          "BuiltIn": true,
+          "Color": "Text 1 50"
+        },
+        "NextImage": {
+          "Name": "Arrow/292_move_next_3.svg",
+          "BuiltIn": true,
+          "Color": "Text 1 50"
+        },
+        "LastImage": {
+          "Name": "Arrow/278_move_last_3.svg",
+          "BuiltIn": true,
+          "Color": "Text 1 50"
+        }
+      }
+    }
+  },
+  "StyleDatas": {
+    "Styles": [
+      {
+        "HorizontalAlignment": 0
+      }
+    ],
+    "Types": {
+      "Strs": [
+        "Right",
+        "Body"
+      ]
+    },
+    "CellStyles": {
+      "15,1": 0
+    },
+    "SheetStyle": {
+      "FontFamily": 1,
+      "FontSize": -999.0
+    }
+  },
+  "Spans": [
+    "1,1,1,3",
+    "5,1,10,11",
+    "4,2,1,3",
+    "3,2,1,3",
+    "4,5,1,3",
+    "3,5,1,3",
+    "4,8,1,2",
+    "3,8,1,2",
+    "4,10,1,2",
+    "3,10,1,2",
+    "15,1,1,11"
+  ],
+  "PageInfo": {
+    "$type": "Forguncy.Model.Pages.NormalPage, ServerDesignerCommon",
+    "PermissionData": {
+      "$type": "Forguncy.RbacPermission.Core.Impl.Page.PagePermissionData, Forguncy.RbacPermission.Core",
+      "permissionResource": {
+        "$type": "Forguncy.RbacPermission.Core.Impl.Page.PagePermissionResource, Forguncy.RbacPermission.Core"
+      },
+      "permissionBindings": [
+        {
+          "$type": "Forguncy.RbacPermission.Core.Impl.Page.PagePermissionBinding, Forguncy.RbacPermission.Core",
+          "roleNames": [
+            "claudekey管理员"
+          ]
+        }
+      ]
+    },
+    "RowBreakLines": [],
+    "RepeatRangeSettings": []
+  },
+  "PrintInfo": {
+    "PaperSize": {},
+    "Margin": {}
+  }
+}//OArZ+XJ/RZ+ES4dTmccHbQLBWMLn5xM+6mPeEsZnDYuWznzEDYbL+cCbJ/dVkO9drjpSIuiQEUb2g3uPhoX7Y6h8SKaQVcSv6hQFiejffmVoFKjarjhCHQ5JhXn8M1K/b5t1Aq+DhfjDMq8BHGSy2HuYAY7UogiXpBoHoFO+5dpzu42onxkyzFNIZm2lLmh0qTY43nSyi7GmVyemyU3DWbj8iSB/RSf1t79uwdxPMsVLInMGXFyrwtDQRcVQMF0QfFHLRDcC+UXJPDF7+GLipl2PxkJ69Mw83to6GMDCsCYpFLVSCpqIC1NUM1WV/Ww6+3DkeZYe4PU5Y0MJawrdBZ9kMmsb5/PN9eWfg/AebgbZ9TsFiBrt4EMHx3lAtXlBVgsjtBwdcLFuHJdoIpoa3BPzYGG8DNcfATzhJoocLeMZeXMRyBeOdCLOipfSI+UwkKIRt9fxbdISzmgLmh49BYxt9pWRl7nRku+3BECYVPOfigwPdripBzOWVdZkLhq1X+BxBXItELDrXN7nTCnkH83odaL8cAv2Je1LXU6cm8dr7+mPNZM6FN8KeDimsxWwhXxHJgJGUoEVHqxJJI4db4ARD+NCSkPSQcoiiJrn3QK6P2Q0kjZ0vjxeyHgGIDA72/zpU+H6trbX8TE2oma9cwlAAcCyKrCXgnR1mmNVBfW8cTJ6BUnCRVzlHse/OXqyUfeIisqHmwqlsXccdluVhIFXgxy5mmI4hu87ci+U35IIPZvYb147/JaBgHAmVbp1zHq0LUj18LR52b0rUYzXgZTiG+bHam8cqxcuT/Q2E5XU1Seqn153vEc7UoWLbJfeMpwwwi2GaV0SNdZfQifZ9e3J0sMZa70g4U8O/2MAh4RwXvHKCVIRf9yNCieVprRgE5dW67oZWca/jdNnnXoQSpp4FMxxX0O/B+4famMj+jOauKw31W5UOt1y5SSlYPuVzkkJWb3tcZ7s3XbgJhy2FCvNdzO1VG6UHT9mBFOoNJDPvEkKVx2vunG95X0vkf5Z8gwBeHZjtzKZ0PsmSuGzaSQBeWnCAjh8Z2CLeJBHKwV8EgGA3XIlZpVla5UGa4HQ7exDZ9wyiYmX34bTK71vjPyirPqganTYn0tSeJ8Pb+UxfvvYnN0JSrBBCKmLwb2UleE/3Ry+0UxoZAkOemVyz5UHhvcS3dVsT6vyBpNgcMuV13p1YMkYHayK+EPm4swXRJOa86oaLEMQXuSfIQJKsoR0zRY23BErO3xxsnqnQAQwYqiU92f4tfgN/+XKQ18C9vSUWOuQ7e1Z6JJkUWmcgQPpd/P27J4K4FN3TNgfKjQfhHGE7i4n1OtIuqq/OfgcFh50T7nvFiC+P3pLrwZe+ffIZeZFTEz1utpLLSezqZ6gPZKGaegfNpRwMOz7Tn+5Wv39efQrzu/Ri4IQ5hlOTLDcZV+tOTCKqJ46bnQ5t6JPxXh/O6SiKIYTaeInWepuQ1mpSc+e4AYiH2CwRcHZxaPMkWZR6D8zjhXxH/eNJWgX3MkOhL/kZWisDHv92Mx6yHd3IJAodvs/hOU1jcTXZFeVl2CaikdAo59vLbytT5yxYpOsk5UFGMdK+b/jtqcDSvR1dTXYWfTrLpyDWz4cPrHWTDoUOHStV8r34KxBkvO5Dx7SNpn8lvE+I13nIDkCdNUxIxb2JW6wVOzTSerRgWiRbmC9qtlfF4snDzpwswqNHguNuHrsGTQIteHNSmEZSMEdSqXnMGSb+NU382aD8Bt3aXpjhv/IoQlGUV7arTw+kNdM6YIGHTJ3C2dfujdZMilkrs1aVUtc3pG4MdH4wSPedn9JhdYcZNvljoEOguOatMWvr15vUU8Fguwy0aQvUOUyvVuP8vZ0MHCaF7Gql7XvABOXLP8YUm74ELphw6baWoHdF6IkKdTrPacmUXNcqLP/LvbUe4FTrFhSt2e92A==|1944

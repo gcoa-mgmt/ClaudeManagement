@@ -1,0 +1,206 @@
+{
+  "Rows": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "23": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "26": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "31": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      }
+    },
+    "Count": 32
+  },
+  "Cols": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "18": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      }
+    },
+    "Count": 19
+  },
+  "Values": {
+    "13,2": "页面未授权",
+    "16,2": "您没有权限访问目标页面，有可能目标页面只有特定用户组的用户才能访问。",
+    "20,2": "解决方法：",
+    "22,2": "1.",
+    "22,3": "登出，并使用其他账号重新登录",
+    "24,2": "2.",
+    "24,3": "单击浏览器的后退按钮跳转到前一个页面，再选择其他链接浏览",
+    "27,2": "3.",
+    "27,3": "联系网站管理员申请权限"
+  },
+  "AttachInfos": {
+    "3,4": {
+      "CellType": {
+        "$type": "Forguncy.ImageCellType, ServerDesignerCommon",
+        "ImagePath": "fgc_built-in-page-401.png"
+      }
+    },
+    "22,3": {
+      "CellType": {
+        "$type": "Forguncy.HyperlinkCellType, ServerDesignerCommon",
+        "Text": "登出，并使用其他账号重新登录",
+        "TemplateKey": "_RS_Main",
+        "ForguncyAttribute": "401Login"
+      }
+    }
+  },
+  "StyleDatas": {
+    "Styles": [
+      {
+        "FontFamily": 0,
+        "FontSize": 24.0,
+        "FontWeight": 1,
+        "Foreground": 2,
+        "Formatter": 3,
+        "HorizontalAlignment": 4
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 13.333333015441895,
+        "Foreground": 5,
+        "Formatter": 3,
+        "HorizontalAlignment": 6,
+        "VerticalAlignment": 7,
+        "WordWrap": true
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 16.0,
+        "FontWeight": 1,
+        "Foreground": 2,
+        "Formatter": 3
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 13.333333333333332,
+        "Foreground": 5,
+        "HorizontalAlignment": 6,
+        "VerticalAlignment": 7,
+        "Underline": false,
+        "Strikethrough": false
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 13.333333015441895,
+        "Foreground": null,
+        "Formatter": 3,
+        "Underline": false
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 13.333333015441895,
+        "Foreground": 5,
+        "Formatter": 3,
+        "VerticalAlignment": 7,
+        "WordWrap": true
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 13.333333015441895,
+        "Foreground": 5,
+        "Formatter": 3
+      }
+    ],
+    "Types": {
+      "Strs": [
+        "Body",
+        "Bold",
+        "Text 1 25",
+        "[AUTO]General",
+        "Center",
+        "Text 1 50",
+        "Left",
+        "Top",
+        "#FF000000"
+      ]
+    },
+    "CellStyles": {
+      "13,2": 0,
+      "16,2": 1,
+      "20,2": 2,
+      "22,2": 3,
+      "22,3": 4,
+      "24,2": 3,
+      "24,3": 5,
+      "27,2": 3,
+      "27,3": 6
+    },
+    "SheetStyle": {
+      "FontFamily": 0,
+      "FontSize": -999.0,
+      "Foreground": 8
+    }
+  },
+  "Spans": [
+    "3,4,9,11",
+    "13,2,2,15",
+    "16,2,3,15",
+    "20,2,2,15",
+    "22,2,2,1",
+    "24,2,2,1",
+    "24,3,2,14",
+    "22,3,1,14"
+  ],
+  "PageInfo": {
+    "$type": "Forguncy.Model.Pages.NormalPage, ServerDesignerCommon",
+    "Title": "401页面",
+    "RowBreakLines": [],
+    "RepeatRangeSettings": [],
+    "IsBuiltInPage": true,
+    "IsMobilePage": true
+  },
+  "PrintInfo": {
+    "PaperSize": {},
+    "Margin": {}
+  }
+}//fUilI9C3Fo2LJdHFtHZ9apoq4Cs3m/LH1WuYrIMkS++/2YfwfgMrKi1e/oYGi3gZuVnXxmbQ9t5spICnYPg+TJSjLrHrkpeNnk9GlMnfZ3spBgE9ovKSfY2wn09QT6uHqr3AOg5d09J8xEsVcxfElfiqjuuwtz4rtsmXH6rOZvPHEUxdo1/NLe1gS0XWAjhCseREo/bayOuCofVs2XBiuYbi0Lel7Tuh6aAuU9G3U1NdqcckTTzluyljRdQ4OlTRUORNM0SyQ7aCAaQvWKoRhSq8ew0DRADmj+qUxuFRz6QQtykNOlQh6WKrRzMyZO6uEhk/b5tE51x/DhYv+1CXs9CkybL8CTd82Xcj695LcmhjNqNtw8RcfpwI7Q9cHUv2WTKtDm37SvZPJxQseuEX05s6E4TFe40OIqHJC6KVsiHt3W/JjCAG2IyT/y4ILXbWFLOsL37B+zfCFez7nM1h2C8xsPRKQ2eSg066ihImr5CKF7u48DeoOI0pYHdpJG6lZc49Q95cpfyENCr7eUZsS7S83QH2wVnDcPisxC1QtHpef9DfHLnslIR/UJYR/MFTIklp7P7CI+GY7f0pK/UsXzDz6d5KK4ZuKKtXeQz/mYrB2O3QkHa/Qwmz8HNLKg/mjKJwzqK+7YPMbrLY1j+l+l+mBPcAvrNCw6DIEvH4vZMIez4owY8otVw8ZU3MletYL6q6VJfBnZwX5FQpyjFObNsi0AKLjY7c/PKRXOcI0zNt+1bvuNEV521aS5k5jJUXzmzr+rQdiQsOX7qNi68U6ryaLi1iUHkqpWzFgZrp19M3W98HJJrtuLcz+x1uh2Ss2Jb6ansnToNRdbzUnz5Y6/WH2xdR9mADuE6QHplIbTjop7mtEWDHj0iGEd237QMZDg3AWBig4W9cBxvs//qRVqcvBLEo719q966FF80N5e61CjNZqfWG/mAsyCkF7rU3UnX3o6AwaLKqoXBFuhxxI734t+Ipuq1kAPvLf8c9ISablwgK4QLoE3+sVGRhHUn6KQa8MXBJRyCjgWjC4Mkhsp8FmviKLAnseFy1vcZ7Ay0xbc65ZwtfEupBik0clNerT60HA0BtMlppIkQkzfpz87RG/A1XigvzEZjBouDTQNKf9Lj9kxK2Lh7QvmEkYJlUCPs2dKFViynLe3s6bZwWJEULf8vWywsk1gegmNwM/aWE/hPSrbFDwAwl+J0u8Kzop2ba9fwKeXy+9pJA+sEhDIp3vu7CAh7zcrowv5/QMJAzFIu/2WSw3cRQtKGtFbrIrD6Yemxm4GFkGh6zfWuBMRhngnLgXJaJQhxG3H08eZKvnGYgejH92f26lbtF8Z36u/I+IL7pbaBtt/LJMSobNCs9TxwOZgOMho6+8m2j1q46Gt17qlEOZ3F3jHQ8c2ScoYWzPYXBffu/6qVQqk2xTXG5LrZkU+KbOFlluhmC5Bv+eqg4S8xZRPf8fkIxNqiIKyDLtRgkRYRHZTV19KZyN6xghAmU2wsnvquhcNLmx9hIpJfMT2M8rEd+wurGi0j0IHkvWIBBUOb8Y99j1h3oL7XJgTN6JQi/mQ2UoFajcHVkr1FsM+/3h6qMX4iONnhvzJ53SjvpIaMzBQ4OFQW4/x7nAGIi0cLQntfrOSr53b0FvDDaJ6uILu0ubGeqjJFoalpTIX2qvcymNvkuehk526FOzJaYkLWmEwnGbPs81gh4C32rv8+rZYt6kjKGz0y5wlbGtAjxSVo2qRSODZt5CHH6N7Imk/45W9syLmqcuD1n0Yg92XHf22N49TGVVGNTlrxRCS7BB/dfosUEWIZbIgr+ECIB0Wv50yZgNR7rTJGrdosm/PKLE3y0fDJ2fklAFieVtpdLd+V55O2LiEJ8/v81SwHxABhbeJZmxfIrShSZUqN1WGc/AJn+5voOkwocbAHdOCpr/f9xbSaJ/n+m/g==|1944

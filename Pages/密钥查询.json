@@ -1,0 +1,127 @@
+{
+  "Rows": {
+    "RowColumnAttachedInfos": {
+      "9": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 32.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      }
+    },
+    "Count": 28,
+    "DefaultSize": 32.0
+  },
+  "Cols": {
+    "RowColumnAttachedInfos": {
+      "1": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 32.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      }
+    },
+    "Count": 37,
+    "DefaultSize": 32.0
+  },
+  "AttachInfos": {
+    "0,0": {
+      "CssName": "app"
+    }
+  },
+  "StyleDatas": {
+    "Types": {
+      "Strs": [
+        "Body"
+      ]
+    },
+    "SheetStyle": {
+      "FontFamily": 0,
+      "FontSize": -999.0
+    }
+  },
+  "Spans": [
+    "0,0,28,37"
+  ],
+  "PageInfo": {
+    "$type": "Forguncy.Model.Pages.NormalPage, ServerDesignerCommon",
+    "PageLoadedCommandList": [
+      {
+        "$type": "Forguncy.Model.Commands.SetParameterCommand, ServerDesignerCommon",
+        "ParameterName": "data",
+        "TableValue": {
+          "TableName": "api_keys",
+          "TableValueType": 1,
+          "BindingInfos": [
+            {
+              "GUID": "2b734604-7662-4b47-b953-e4253a431209",
+              "BindingInfo": {
+                "TableName": "api_keys",
+                "ColumnName": "用户",
+                "GUID": "8b320c3e-9a4f-45d3-bd70-83dd40830d26"
+              },
+              "ColumnName": "用户"
+            },
+            {
+              "GUID": "78a843a9-5dfc-4c84-9697-3bcf1e5cb2dd",
+              "BindingInfo": {
+                "TableName": "api_keys",
+                "ColumnName": "key",
+                "GUID": "45101801-d291-4710-bfe2-c67e8a226b50"
+              },
+              "ColumnName": "key"
+            }
+          ],
+          "SqlCondition": {
+            "$type": "ForguncyDataAccess.GeneralCESqlCondition, ForguncyDataAccess",
+            "ColumnBindingInfo": {
+              "TableName": "api_keys",
+              "ColumnName": "用户",
+              "GUID": "3333a75c-2f8b-4565-a3b1-0f7773d3aa9a"
+            },
+            "Value": "%CurrentUser.UserName%"
+          }
+        },
+        "ID": "d260ee9a3def4edaae8632b5532c17d9",
+        "BreakpointIdentity": "f11f3691-cd62-4cd3-a48f-7920a56260cc"
+      },
+      {
+        "$type": "Forguncy.Model.RunJavaScriptCommand, ServerDesignerCommon",
+        "JavaScript": "// API密钥页面渲染脚本\r\n(function() {\r\n    // 获取密钥\r\n    function getKey() {\r\n        try {\r\n            return Forguncy.CommandHelper.getVariableValue(\"data\")?.key;\r\n        } catch (err) {\r\n            console.error('获取密钥失败:', err);\r\n            return null;\r\n        }\r\n    }\r\n\r\n    // 全局变量存储完整密钥和显示状态\r\n    let fullKey = getKey();\r\n    let isKeyVisible = false;\r\n\r\n    // 生成遮蔽版本的密钥（显示前16位和后8位）\r\n    function getMaskedKey(key) {\r\n        if (!key || key.length < 24) return key;\r\n        const prefix = key.substring(0, 16); // sk_live_ + 前8位\r\n        const suffix = key.substring(key.length - 8);\r\n        const masked = '*'.repeat(key.length - 24);\r\n        return prefix + masked + suffix;\r\n    }\r\n\r\n    // 显示提示消息\r\n    function showToast(message) {\r\n        const toast = document.getElementById('apiKeyToast');\r\n        if (toast) {\r\n            toast.textContent = message;\r\n            toast.classList.add('show');\r\n\r\n            setTimeout(() => {\r\n                toast.classList.remove('show');\r\n            }, 2000);\r\n        }\r\n    }\r\n\r\n    // 切换密钥显示\r\n    function toggleKey() {\r\n        const keyText = document.getElementById('apiKeyText');\r\n        const showBtn = document.getElementById('apiShowBtn');\r\n\r\n        isKeyVisible = !isKeyVisible;\r\n\r\n        if (isKeyVisible) {\r\n            keyText.textContent = fullKey;\r\n            showBtn.textContent = '👁️ 隐藏密钥';\r\n        } else {\r\n            keyText.textContent = getMaskedKey(fullKey);\r\n            showBtn.textContent = '👁️ 显示完整密钥';\r\n        }\r\n    }\r\n\r\n    // 复制密钥\r\n    function copyKey() {\r\n        // 总是复制完整密钥\r\n        navigator.clipboard.writeText(fullKey).then(() => {\r\n            showToast('✓ 复制成功！');\r\n        }).catch(err => {\r\n            showToast('✗ 复制失败');\r\n        });\r\n    }\r\n\r\n    // CSS样式\r\n    const styles = `\r\n        <style>\r\n            .api-key-container * {\r\n                margin: 0;\r\n                padding: 0;\r\n                box-sizing: border-box;\r\n            }\r\n\r\n            .api-key-container {\r\n                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\r\n                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\r\n                min-height: 100vh;\r\n                display: flex;\r\n                justify-content: center;\r\n                align-items: center;\r\n                padding: 20px;\r\n            }\r\n\r\n            .api-key-content {\r\n                background: white;\r\n                border-radius: 20px;\r\n                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);\r\n                max-width: 600px;\r\n                width: 100%;\r\n                padding: 40px;\r\n                animation: slideIn 0.5s ease-out;\r\n            }\r\n\r\n            @keyframes slideIn {\r\n                from {\r\n                    opacity: 0;\r\n                    transform: translateY(-30px);\r\n                }\r\n                to {\r\n                    opacity: 1;\r\n                    transform: translateY(0);\r\n                }\r\n            }\r\n\r\n            .api-key-header {\r\n                text-align: center;\r\n                margin-bottom: 30px;\r\n            }\r\n\r\n            .api-key-header h1 {\r\n                color: #333;\r\n                font-size: 28px;\r\n                margin-bottom: 10px;\r\n            }\r\n\r\n            .api-key-header p {\r\n                color: #666;\r\n                font-size: 14px;\r\n            }\r\n\r\n            .api-key-warning-box {\r\n                background: #fff3cd;\r\n                border-left: 4px solid #ffc107;\r\n                padding: 15px;\r\n                margin-bottom: 25px;\r\n                border-radius: 5px;\r\n            }\r\n\r\n            .api-key-warning-box p {\r\n                color: #856404;\r\n                font-size: 13px;\r\n                line-height: 1.6;\r\n            }\r\n\r\n            .api-key-section {\r\n                margin-bottom: 25px;\r\n            }\r\n\r\n            .api-key-label {\r\n                color: #555;\r\n                font-size: 14px;\r\n                font-weight: 600;\r\n                margin-bottom: 10px;\r\n                display: block;\r\n            }\r\n\r\n            .api-key-box {\r\n                position: relative;\r\n                background: #f8f9fa;\r\n                border: 2px solid #e9ecef;\r\n                border-radius: 10px;\r\n                padding: 15px 70px 15px 15px;\r\n                transition: all 0.3s ease;\r\n            }\r\n\r\n            .api-key-box:hover {\r\n                border-color: #667eea;\r\n                background: #f0f0ff;\r\n            }\r\n\r\n            .api-key-text {\r\n                font-family: 'Courier New', monospace;\r\n                font-size: 14px;\r\n                color: #333;\r\n                word-break: break-all;\r\n                user-select: all;\r\n            }\r\n\r\n            .api-key-copy-btn {\r\n                position: absolute;\r\n                right: 10px;\r\n                top: 50%;\r\n                transform: translateY(-50%);\r\n                background: #667eea;\r\n                color: white;\r\n                border: none;\r\n                border-radius: 8px;\r\n                padding: 8px 12px;\r\n                cursor: pointer;\r\n                font-size: 12px;\r\n                transition: all 0.3s ease;\r\n                min-width: 50px;\r\n            }\r\n\r\n            .api-key-copy-btn:hover {\r\n                background: #5568d3;\r\n                transform: translateY(-50%) scale(1.05);\r\n            }\r\n\r\n            .api-key-copy-btn:active {\r\n                transform: translateY(-50%) scale(0.95);\r\n            }\r\n\r\n            .api-key-show-btn {\r\n                background: #667eea;\r\n                color: white;\r\n                border: none;\r\n                border-radius: 8px;\r\n                padding: 10px 20px;\r\n                cursor: pointer;\r\n                font-size: 14px;\r\n                margin-top: 15px;\r\n                transition: all 0.3s ease;\r\n                width: 100%;\r\n            }\r\n\r\n            .api-key-show-btn:hover {\r\n                background: #5568d3;\r\n                transform: translateY(-2px);\r\n            }\r\n\r\n            .api-key-show-btn:active {\r\n                transform: translateY(0);\r\n            }\r\n\r\n            .api-key-toast {\r\n                position: fixed;\r\n                top: 20px;\r\n                right: 20px;\r\n                background: #28a745;\r\n                color: white;\r\n                padding: 12px 20px;\r\n                border-radius: 8px;\r\n                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\r\n                font-size: 14px;\r\n                opacity: 0;\r\n                transform: translateY(-20px);\r\n                transition: all 0.3s ease;\r\n                pointer-events: none;\r\n                z-index: 1000;\r\n            }\r\n\r\n            .api-key-toast.show {\r\n                opacity: 1;\r\n                transform: translateY(0);\r\n            }\r\n\r\n            .api-key-no-access {\r\n                background: #fff;\r\n                border-radius: 20px;\r\n                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);\r\n                max-width: 600px;\r\n                width: 100%;\r\n                padding: 60px 40px;\r\n                text-align: center;\r\n                animation: slideIn 0.5s ease-out;\r\n            }\r\n\r\n            .api-key-no-access-icon {\r\n                font-size: 80px;\r\n                margin-bottom: 30px;\r\n                opacity: 0.8;\r\n            }\r\n\r\n            .api-key-no-access h2 {\r\n                color: #333;\r\n                font-size: 24px;\r\n                margin-bottom: 20px;\r\n            }\r\n\r\n            .api-key-no-access-message {\r\n                background: #f8f9fa;\r\n                border-left: 4px solid #667eea;\r\n                padding: 20px;\r\n                margin: 30px 0;\r\n                border-radius: 8px;\r\n                text-align: left;\r\n            }\r\n\r\n            .api-key-no-access-message p {\r\n                color: #555;\r\n                font-size: 15px;\r\n                line-height: 1.8;\r\n                margin-bottom: 12px;\r\n            }\r\n\r\n            .api-key-no-access-message p:last-child {\r\n                margin-bottom: 0;\r\n            }\r\n\r\n            .api-key-no-access-message strong {\r\n                color: #667eea;\r\n            }\r\n\r\n            .api-key-contact-info {\r\n                background: #fff3cd;\r\n                border-radius: 8px;\r\n                padding: 15px;\r\n                margin-top: 20px;\r\n            }\r\n\r\n            .api-key-contact-info p {\r\n                color: #856404;\r\n                font-size: 14px;\r\n                line-height: 1.6;\r\n            }\r\n        </style>\r\n    `;\r\n\r\n    // HTML内容 - 有密钥的情况\r\n    const htmlWithKey = `\r\n        <div class=\"api-key-container\">\r\n            <div class=\"api-key-content\">\r\n                <div class=\"api-key-header\">\r\n                    <h1>🔐 您的专属密钥</h1>\r\n                    <p>请妥善保管，不要与他人分享</p>\r\n                </div>\r\n\r\n                <div class=\"api-key-warning-box\">\r\n                    <p>⚠️ <strong>安全提示：</strong>此密钥用于验证您的身份，请勿在公共场所展示或分享给他人。如果密钥泄露，请立即联系管理员 Edric.Li 重新生成。</p>\r\n                </div>\r\n\r\n                <div class=\"api-key-section\">\r\n                    <label class=\"api-key-label\">API 密钥</label>\r\n                    <div class=\"api-key-box\">\r\n                        <div class=\"api-key-text\" id=\"apiKeyText\"></div>\r\n                        <button class=\"api-key-copy-btn\" id=\"apiCopyBtn\">复制</button>\r\n                    </div>\r\n                    <button class=\"api-key-show-btn\" id=\"apiShowBtn\">👁️ 显示完整密钥</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"api-key-toast\" id=\"apiKeyToast\">✓ 复制成功！</div>\r\n    `;\r\n\r\n    // HTML内容 - 没有密钥的情况\r\n    const htmlNoKey = `\r\n        <div class=\"api-key-container\">\r\n            <div class=\"api-key-no-access\">\r\n                <div class=\"api-key-no-access-icon\">🔒</div>\r\n                <h2>暂未开通使用权限</h2>\r\n\r\n                <div class=\"api-key-no-access-message\">\r\n                    <p>📋 <strong>如需开通：</strong>请向您的部门经理提交使用申请</p>\r\n                    <p>✅ <strong>已获批准但仍未显示：</strong>请联系技术支持 Edric.Li 协助处理</p>\r\n                </div>\r\n\r\n                <div class=\"api-key-contact-info\">\r\n                    <p>💡 <strong>温馨提示：</strong>权限审批通常需要几个工作日，请耐心等待。如有紧急需求，请直接联系管理员加急处理。</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    `;\r\n\r\n    // 渲染到页面\r\n    const appElement = document.querySelector('.app');\r\n    if (appElement) {\r\n        // 插入样式\r\n        const styleElement = document.createElement('div');\r\n        styleElement.innerHTML = styles;\r\n        document.head.appendChild(styleElement.querySelector('style'));\r\n\r\n        // 判断是否有密钥\r\n        if (fullKey && fullKey.trim() !== '') {\r\n            // 有密钥，显示密钥页面\r\n            appElement.innerHTML = htmlWithKey;\r\n\r\n            // 初始化：显示遮蔽版本的密钥\r\n            const keyTextElement = document.getElementById('apiKeyText');\r\n            if (keyTextElement) {\r\n                keyTextElement.textContent = getMaskedKey(fullKey);\r\n            }\r\n\r\n            // 绑定事件\r\n            const copyBtn = document.getElementById('apiCopyBtn');\r\n            const showBtn = document.getElementById('apiShowBtn');\r\n\r\n            if (copyBtn) {\r\n                copyBtn.addEventListener('click', copyKey);\r\n            }\r\n\r\n            if (showBtn) {\r\n                showBtn.addEventListener('click', toggleKey);\r\n            }\r\n        } else {\r\n            // 没有密钥，显示无权限页面\r\n            appElement.innerHTML = htmlNoKey;\r\n        }\r\n    } else {\r\n        console.error('找不到 class=\"app\" 的元素');\r\n    }\r\n})();\r\n",
+        "ID": "987d366a9a75408a9dce0b8e9a973315",
+        "BreakpointIdentity": "dc9afc8c-d05b-4bc8-8c5e-82048cf03049"
+      }
+    ],
+    "PermissionData": {
+      "$type": "Forguncy.RbacPermission.Core.Impl.Page.PagePermissionData, Forguncy.RbacPermission.Core",
+      "permissionResource": {
+        "$type": "Forguncy.RbacPermission.Core.Impl.Page.PagePermissionResource, Forguncy.RbacPermission.Core"
+      },
+      "permissionBindings": [
+        {
+          "$type": "Forguncy.RbacPermission.Core.Impl.Page.PagePermissionBinding, Forguncy.RbacPermission.Core",
+          "roleNames": [
+            "FGC_LoginUser"
+          ]
+        }
+      ]
+    },
+    "RowBreakLines": [],
+    "RepeatRangeSettings": []
+  },
+  "PrintInfo": {
+    "PaperSize": {},
+    "Margin": {}
+  }
+}//xUTdU1Uxqob3zPE+IgOBkGMP/X1U7YAtFI2PKbkPGuyMMnALuuh9tYnWuUF+bnAIH6eVNZ1xXzUMgEJZ/RHOr7XMbrKz1zUbGvg5vl9Ho3R3xvnfJUTrUmm6yktLUNZqjovzxCAmv17d257F1wjGb2gMyTFi8l9Y9L+2jWP6FamVBIQpNd7MqOXtk7ApkG/b+d4qQ90+5igfJFXj0606I9snxjLmst8AkONrknRjSIp1OvLqTSyAJZT79rESl/YeJuEb28ZIrWZvR1nvUxP/TKkd9wI7tx2UYY/paSL64BVa7/m6Nwvz6PK0qAIV4QR8QYeh/1fskJcQ65+Txe97d0UM7wEpeG/S4PBw5fY3BwINvLmAh/AyoHjvsdyOgByUx7gfQOHNz/VBvY0jPFFbp0F3c1TgMtlHv3ktlEH6ijo2wt57aMgQ+mjwwXGsenFwatTyo4MumqklQGQJRc3ovemha01IvLFY9hOfK7QL03Q8kJYB7Lnn4smIaw69Atnoh4rH6fsQus11rgpP7MOaA6rV4yM3ngvzA42UUVIJKWNc0x6OtrcAnsKQNWkUKUbgxrMyCTyPZ6RjL95QfZktjIxQqS8APvvssXTpk2pSrn5hw/wIP38zFh7l5TfnXSbv3o2qcQXx4b7E2/vtH6d9iL1a+qAo66+9AZB94Jo/WaVPK+Yan2aoK9tqBNIZIxH7r4W3ZxQSEKpYh45uubGXU60A/voWvZpm4ffcdwGghNOJqHDtvR0APvqHWdn2fawwrPdO8r4JQDpLrwlPSzgkBoUCH2wtDpHekaHPRD3u59YlSxcPnb5uCXd12igLvI7BUTon2hfXy6ICcyWkaviThC8ndgPOU33+8OkvIPk1NC6/ZkIDHuFv1+mn75Ll6sj2pftK0DQTU8dEO6LNKKxy+pKeDMikv5W0qvtoTw2EJ9GLQI1JLZHg+qm3cM4E0Pa71yXXKo43FjznpkRH+CeJ9uKUiuMmNshM3bE7/DYA3v+xod3d/LjWiWH11NIa64KMn5QgcNsjqFOCAUClclbeWDJGD2CFrzjhuPVyBSDjU9DI4p8VlWxQKyZJtvyCmnGk6VMCMf+dQIH6IBlQENBnY6zOjOMQyqrd8RioGuAFTHJweM7uaeX9FMtAWYXEuTEQffffllRo68GMcj97UfNJEQJY/g/9620dP/D+LbnxGXhfLjze3ColkPWJB0yRG8lCwb2FaesGhmIfW6wmOfbWKnqlCA9DxQBDwKPvJKbao8E/YUxBLSGY5JojJxVAX8ByG3SXhRbjqQ/F0s1wKRBgQB00LIPjbpkw3E2VRbYRtczZZg8ULLvXyoQ5kEp4ps8EFBk+D2tQzNWw3SpqYXcWJoET20H1S1CS0GUFJSxU4kz0teYCnelfAIeG7aQHC/5C4F5ZXlDo78Ny6sSul0ORLv0Si7jV0IifLOFvjWZbHEn5nHJ22CXuD99PygNhCzorIdcYWYwk19GkrkOJe0eD6Da7TW0vIJbMEvSfg7ilkJBtfVILjIxc0ajFDBHEFeiJWVllM5rPI3+NafxyfttKpNCdnAoWWzzydt5fJ8Gf1ckrP8tyKJtqUeWbZtQd6Grx6B6GqGcs+Ij63wtemj5YbkP7Rkp+/DGRdhgVw3cx1xTLM4fvizSckdb+m6uuQuPDS0RLBoLnpyxIVKAKhfzvujxW8i6Z1N4kWF9Ag/sORbKsnwYDWhgY1BbFu5lcXYpSxZ1LcnuQeGWmgSHEfGv+g1sUEtSDGOGTlxNsuOH7UE3VWhTN8qk3VpVVr8adBsSUSQMoio8wiCFKgSz0lf9o+YaHqstF8v8UWi0wjgVq5IAghpvZdJiQP16fvXYVnGTuDXEexoFvWKSSntXRi7yxefP5NZkg++k+ARNFda8bdDv79V5OinaG16f4x4hh0jXHrt1PoC1ALNNUoKdMG4cKJQ==|1944
