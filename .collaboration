@@ -77,8 +77,18 @@
   },
   {
     "ModuleName": "PCPage/api_keys_列表页面",
+    "State": 1,
+    "LockedBy": {
+      "UserName": "CindyWu",
+      "Email": "cindy.wu@grapecity.com"
+    },
+    "LockDateTime": "2025-10-21T11:36:28.2751747+08:00",
     "ModuleType": 1,
-    "IconType": 1
+    "IconType": 1,
+    "ToRemoveFiles": [
+      "Pages\\api_keys_列表页面.json",
+      "Pages\\api_keys_列表页面.rd"
+    ]
   },
   {
     "ModuleName": "MasterPCPage/FGC_母版页",
