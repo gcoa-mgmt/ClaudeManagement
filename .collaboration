@@ -62,33 +62,13 @@
   },
   {
     "ModuleName": "PCPage/api_keys_详情页面",
-    "State": 1,
-    "LockedBy": {
-      "UserName": "CindyWu",
-      "Email": "cindy.wu@grapecity.com"
-    },
-    "LockDateTime": "2025-10-21T11:36:17.8409494+08:00",
     "ModuleType": 1,
-    "IconType": 1,
-    "ToRemoveFiles": [
-      "Pages\\api_keys_详情页面.json",
-      "Pages\\api_keys_详情页面.rd"
-    ]
+    "IconType": 1
   },
   {
     "ModuleName": "PCPage/api_keys_列表页面",
-    "State": 1,
-    "LockedBy": {
-      "UserName": "CindyWu",
-      "Email": "cindy.wu@grapecity.com"
-    },
-    "LockDateTime": "2025-10-21T11:36:28.2751747+08:00",
     "ModuleType": 1,
-    "IconType": 1,
-    "ToRemoveFiles": [
-      "Pages\\api_keys_列表页面.json",
-      "Pages\\api_keys_列表页面.rd"
-    ]
+    "IconType": 1
   },
   {
     "ModuleName": "MasterPCPage/FGC_母版页",
@@ -137,19 +117,8 @@
   },
   {
     "ModuleName": "UserService",
-    "State": 1,
-    "LockedBy": {
-      "UserName": "CindyWu",
-      "Email": "cindy.wu@grapecity.com"
-    },
-    "LockDateTime": "2025-10-21T11:35:53.1805499+08:00",
     "ModuleType": 11,
-    "IconType": 12,
-    "ToRemoveFiles": [
-      "UserServiceDB.sqlite3",
-      "CloudStorageProvider\\data.json",
-      "SecurityProviderV2\\data.json"
-    ]
+    "IconType": 12
   },
   {
     "ModuleName": "CustomLibrary",
