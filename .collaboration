@@ -62,8 +62,18 @@
   },
   {
     "ModuleName": "PCPage/api_keys_详情页面",
+    "State": 1,
+    "LockedBy": {
+      "UserName": "CindyWu",
+      "Email": "cindy.wu@grapecity.com"
+    },
+    "LockDateTime": "2025-10-21T11:36:17.8409494+08:00",
     "ModuleType": 1,
-    "IconType": 1
+    "IconType": 1,
+    "ToRemoveFiles": [
+      "Pages\\api_keys_详情页面.json",
+      "Pages\\api_keys_详情页面.rd"
+    ]
   },
   {
     "ModuleName": "PCPage/api_keys_列表页面",
