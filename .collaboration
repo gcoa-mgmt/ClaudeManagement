@@ -57,18 +57,8 @@
   },
   {
     "ModuleName": "PCPage/密钥查询",
-    "State": 1,
-    "LockedBy": {
-      "UserName": "CindyWu",
-      "Email": "cindy.wu@grapecity.com"
-    },
-    "LockDateTime": "2025-10-21T17:14:00.6055778+08:00",
     "ModuleType": 1,
-    "IconType": 1,
-    "ToRemoveFiles": [
-      "Pages\\密钥查询.json",
-      "Pages\\密钥查询.rd"
-    ]
+    "IconType": 1
   },
   {
     "ModuleName": "PCPage/api_keys_详情页面",
